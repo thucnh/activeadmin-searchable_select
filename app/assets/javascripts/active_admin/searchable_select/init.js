@@ -15,10 +15,14 @@
             dataType: 'json',
 
             data: function (params) {
-              return {
+              ajax_params = {
                 term: params.term,
                 page: pageParamWithBaseZero(params)
-              };
+              }
+              if(!$(item).searchable_select2_params) {
+                return ajax_params;
+              }
+              return $(item).searchable_select2_params(ajax_params);
             }
           }
         });
