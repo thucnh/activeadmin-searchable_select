@@ -212,6 +212,20 @@ $('#input-searchable-select2').on('select2:select', function(e) {
 })
 ```
 
+#### Client side dynamic filter parameters
+This feature is only available in this fork. Setup dynamic filter params from Javascript
+
+``` javascript
+$(document).ready(function () {
+	$.fn.extend({
+    searchable_select2_params: function (ajax_params) {
+    	ajax_params['i_am_a_client_dynamic_param'] = $(this).val();
+    	return ajax_params;
+    }
+  });
+})	
+```
+
 #### Passing Parameters
 
 You can pass additional parameters to the options endpoint:
