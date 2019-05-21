@@ -193,7 +193,7 @@ build your query in a way that it can query multiple attributes at once.
 
 In this example, the `all` scope will query `email OR username`.
 
-#### Attaches other Attributes 
+#### Attaching other Attributes 
 This feature is only available in this fork.
 
 ```ruby
@@ -202,6 +202,14 @@ This feature is only available in this fork.
                                text_attribute: :username,
                                :attached_attributes => [:email, :address])
    end
+```
+
+And easy to pickup the Attached Attributes from Javascript
+
+``` javascript
+$('#input-searchable-select2').on('select2:select', function(e) {
+   alert('Attached attributes:' + e.params.data.attributes)
+})
 ```
 
 #### Passing Parameters
