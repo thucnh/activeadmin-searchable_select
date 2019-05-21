@@ -193,6 +193,17 @@ build your query in a way that it can query multiple attributes at once.
 
 In this example, the `all` scope will query `email OR username`.
 
+#### Attaches other Attributes 
+This feature is only available in this fork.
+
+```ruby
+   ActiveAdmin.register User do
+     searchable_select_options(scope: User.all,
+                               text_attribute: :username,
+                               :attached_attributes => [:email, :address])
+   end
+```
+
 #### Passing Parameters
 
 You can pass additional parameters to the options endpoint:
